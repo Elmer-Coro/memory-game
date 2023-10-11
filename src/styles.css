@@ -1,0 +1,67 @@
+body{
+    display: grid;
+    place-content: center;
+    place-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: sans-serif;
+}
+.memory-game{
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+    place-items: center;
+    place-content: center;
+}
+.card{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: rgb(102, 102, 243);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.matched{
+    background-color: rgb(52, 52, 243);
+    pointer-events: none;
+}
+.win-message{
+    text-align: center;
+}
+.reset-button{
+    display: block;
+    margin: 20px auto;
+}
+
+.hidden {
+    display: none;
+}
+.reset-button{
+    background: rgb(52, 52, 243);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2em;
+    }
+    .memory-game{
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        grid-gap: 10px;
+    }
+      
+}
