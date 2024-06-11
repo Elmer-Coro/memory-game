@@ -20,14 +20,7 @@ let cards = [
 let flippedCards = [];
 const winMessage = document.querySelector(".win-message");
 const resetButton = document.querySelector(".reset-button");
-
-function checkWin() {
-  const matchedCards = document.querySelectorAll(".card.matched");
-  if (matchedCards.length === cards.length) {
-    winMessage.classList.remove("hidden");
-    resetButton.style.display = "block";
-  }
-}
+const memoryGame = document.querySelector(".memory-game");
 
 function createCard(card) {
   const div = document.createElement("div");
@@ -36,6 +29,14 @@ function createCard(card) {
   div.textContent = "❓";
   div.addEventListener("click", handleCardClick);
   return div;
+}
+
+function checkWin() {
+  const matchedCards = document.querySelectorAll(".card.matched");
+  if (matchedCards.length === cards.length) {
+    winMessage.classList.remove("hidden");
+    resetButton.style.display = "block";
+  }
 }
 
 function handleCardClick() {
@@ -63,8 +64,6 @@ function handleCardClick() {
     checkWin();
   }
 }
-
-const memoryGame = document.querySelector(".memory-game");
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
